@@ -1,6 +1,6 @@
 package nl.programIt.entities;
 /*@Autor: Baddi
- * gemaakt op 24-8-20016
+ * gemaakt op 20-8-20016
  **/
 import java.util.Date;
 
