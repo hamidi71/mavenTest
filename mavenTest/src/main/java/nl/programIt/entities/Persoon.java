@@ -1,5 +1,7 @@
 package nl.programIt.entities;
-
+/*@Autor: Baddi
+ * gemaakt op 24-8-20016
+ **/
 import java.util.Date;
 
 import javax.persistence.Column;
