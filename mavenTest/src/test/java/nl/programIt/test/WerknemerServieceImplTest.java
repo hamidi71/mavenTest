@@ -2,10 +2,13 @@ package nl.programIt.test;
 //test is gemaakt door Baddi op 17-08-2012
 
 import static org.junit.Assert.*;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import nl.programIt.entities.Werknemer;
+import nl.programIt.service.impl.WerknemerServiceImpl;
 import nl.programIt.service.interfaces.IWerknemerService;
 
 import org.junit.Test;
@@ -20,13 +23,22 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class WerknemerServieceImplTest {
 	@Autowired
 	private IWerknemerService werknemer;
-		
+	
+	@Test
+	public void findByEmailAndWachtwoordTest(){
+		WerknemerServiceImpl w=new WerknemerServiceImpl();
+		String c= w.findWerknemerByUsernameAndWachtwoord("ilias@gmail.com", "Null").getEmail();
+		System.out.println(c);		
+	}
+	
+	//Test Add methode ( package nl.programIt.service.impl.AddWerknemer)	
 	@Test
 	public void findAllPesoonTest(){
 		//assertNull(pers.findAllPesoon());	
 		assertNotEquals(0, werknemer.findAllWerknemers().size());
 	}
 	
+	//Test Add methode ( package nl.programIt.service.impl.AddWerknemer)
 	@Test
 	public void AddWerknemerTest(){
 		try {
@@ -43,7 +55,7 @@ public class WerknemerServieceImplTest {
 		werknemer.AddWerknemer(p2);
 		werknemer.AddWerknemer(p3);
 		werknemer.AddWerknemer(p4);
-		werknemer.AddWerknemer(p5);
+		werknemer.AddWerknemer(p5);	
 		
 		assertTrue(true);
 			

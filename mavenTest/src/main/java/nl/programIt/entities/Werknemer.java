@@ -1,6 +1,7 @@
 package nl.programIt.entities;
 /*@Autor: Baddi
  * gemaakt op 20-8-20016
+ * Werknemer prjoject met Jparepository in plaats va DaoInterface en DaoImpl
  **/
 import java.util.Date;
 

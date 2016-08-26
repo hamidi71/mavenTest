@@ -48,6 +48,13 @@ public class WerknemerServiceImpl implements IWerknemerService {
 		//of
 		//return werknemerRep.findOne(id);
 	}
+//Deze methode zit in JpaRepository Interface daaroom moet je zelf doen als een query
+	@Override
+	public Werknemer findWerknemerByUsernameAndWachtwoord(String username,
+			String password) {
+		Werknemer werknemer=werknemerRep.findByEmailAndWachtwoord(username, password);
+		return werknemer;
+	}
 	
 
 }
