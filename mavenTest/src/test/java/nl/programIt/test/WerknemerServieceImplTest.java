@@ -28,7 +28,7 @@ public class WerknemerServieceImplTest {
 	}
 	
 	@Test
-	public void AddPersoonTest(){
+	public void AddWerknemerTest(){
 		try {
 		DateFormat df=new SimpleDateFormat("yyyy-MM-dd");
 		//bij deze datum wordt:3092-07-10 

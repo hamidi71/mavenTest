@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import nl.programIt.entities.Werknemer;
 import nl.programIt.repository.interfaces.IWerknemerRepository;
 import nl.programIt.service.interfaces.IWerknemerService;
@@ -32,14 +33,20 @@ public class WerknemerServiceImpl implements IWerknemerService {
 		//werknemerRep.findAll();
 		//return findAllWerknemers(); foooot
 		List<Werknemer> list=werknemerRep.findAll();
-		return list;
-		
+		return list;		
 	}
 
 	@Override
 	public void updateWerknemer(Werknemer werknemer) {
-		werknemerRep.saveAndFlush(werknemer);
-		
+		werknemerRep.saveAndFlush(werknemer);		
+	}
+
+	@Override
+	public Werknemer findWerknemer(Long id) {
+		Werknemer w=werknemerRep.findOne(id);
+		return w;
+		//of
+		//return werknemerRep.findOne(id);
 	}
 	
 

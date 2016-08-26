@@ -25,8 +25,7 @@ public class Werknemer {
 	private Date geboorteDatum;
 	private String email;
 	private String wachtwoord;
-	private String functie;
-	
+	private String functie;	
 	
 	//Getters en setters	
 	public Long getIdWerknemer() {

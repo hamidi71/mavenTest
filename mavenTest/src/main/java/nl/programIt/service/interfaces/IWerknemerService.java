@@ -8,5 +8,10 @@ public interface IWerknemerService {
 	public void deleteWerknemer(Long id);
 	public List<Werknemer> findAllWerknemers();
 	public void updateWerknemer(Werknemer werknemer);
+	public Werknemer findWerknemer(Long id);
+	
+	
+	//public Werknemer findWerknemerByUsernamePassword(String username,String password);
+	
 	
 }
