@@ -4,39 +4,40 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:repository="http://www.springframework.org/schema/data/repository"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
 		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+		http://www.springframework.org/schema/data/repository http://www.springframework.org/schema/data/repository/spring-repository-1.11.xsd">
 		
 
 	<context:annotation-config/>
 	<context:component-scan base-package="nl.programIt"/>
-	<tx:annotation-driven transaction-manager="transactionManagerObject"/>
+	<tx:annotation-driven transaction-manager="transactionManager"/>
 	<!-- Pas op Bij id="databaseconuction" -->
-	<jpa:repositories base-package="nl.programIt.repository"  
-		entity-manager-factory-ref="entityManagerFactoryObject" transaction-manager-ref="transactionManagerObject"/> 
+	<jpa:repositories base-package="nl.programIt.repository"/> 
 		
 	<!-- Pas op bij vranderen van de id naam id="datasource" moet je bij jpa
 	 entity-manager-factory-ref="entityManagerFactoryObject" transaction-manager-ref="transactionManagerObject" toe voegen-->
-	<bean id="databaseconuction" class="org.apache.commons.dbcp2.BasicDataSource">
+	
+	<bean id="datasource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="url" value="jdbc:mysql://localhost:3306/db_werknemer"/>
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
 		<property name="username" value="root"/>
 		<property name="password" value=""/>	
 	</bean>
 	
-	<bean id="entityManagerFactoryObject" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="dataSource" ref="databaseconuction"/>
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="datasource"/>
 		<property name="packagesToScan" value="nl.programIt.entities"/>
 		<property name="jpaVendorAdapter"> 
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>			
 		</property>		
 	</bean>
 	
-	<bean id="transactionManagerObject" class="org.springframework.orm.jpa.JpaTransactionManager">
-		<property name="entityManagerFactory" ref="entityManagerFactoryObject"/>
-	
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory"/>	
 	</bean>
 
 </beans>

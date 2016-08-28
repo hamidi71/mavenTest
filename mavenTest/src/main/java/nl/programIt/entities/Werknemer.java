@@ -83,9 +83,8 @@ public class Werknemer {
 		this.achterNaam = achterNaam;
 		this.geboorteDatum = geboorteDatum;
 		this.email = email;
-		this.functie = functie;
+		this.functie = functie;		
 	}
-	
 	
 	
 }

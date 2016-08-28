@@ -2,34 +2,35 @@ package nl.programIt.test;
 //test is gemaakt door Baddi op 17-08-2012
 
 import static org.junit.Assert.*;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+import nl.programIt.AppConfig;
 import nl.programIt.entities.Werknemer;
 import nl.programIt.service.impl.WerknemerServiceImpl;
 import nl.programIt.service.interfaces.IWerknemerService;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
 //Declare la relation entre spring et Junit
 @RunWith(SpringJUnit4ClassRunner.class)
 //charger context
 @ContextConfiguration(locations={"classpath:applicationContext.xml"})
+//@ContextConfiguration(classes=AppConfig.class)
+
 public class WerknemerServieceImplTest {
 	@Autowired
 	private IWerknemerService werknemer;
 	
-	@Test
+	/*@Test
 	public void findByEmailAndWachtwoordTest(){
 		WerknemerServiceImpl w=new WerknemerServiceImpl();
-		String c= w.findWerknemerByUsernameAndWachtwoord("ilias@gmail.com", "Null").getEmail();
+		String c= w.findWerknemerByUsernameAndWachtwoord("ilias@gmail.com", "Null").getVoorNaam();
 		System.out.println(c);		
-	}
+	}*/
 	
 	//Test Add methode ( package nl.programIt.service.impl.AddWerknemer)	
 	@Test

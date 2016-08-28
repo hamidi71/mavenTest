@@ -1,0 +1,6 @@
+nl.programIt
+nl.programIt.entities
+nl.programIt.repository.interfaces
+nl.programIt.service.impl
+nl.programIt.service.interfaces
+nl.programIt.test
