@@ -26,11 +26,11 @@ public class MedwerkerServlet extends HttpServlet{
 		//HttpServletRequest vraag
 		//HttpServletResponse aantworden
 	   	//LoaderClass lod =new LoaderClass();
-	   	private IWerknemerService wernemerService=LoaderClass.getWerknemerService();
+	   	private IWerknemerService werknemerService=LoaderClass.getWerknemerService();
 	  
 	   
 		//@Autowired is niet van toepassing
-		private IWerknemerService werknemerService;
+		//private IWerknemerService werknemerService;
 		@Override
 		protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 				throws ServletException, IOException {

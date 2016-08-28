@@ -20,17 +20,16 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 //charger context
 @ContextConfiguration(locations={"classpath:applicationContext.xml"})
 //@ContextConfiguration(classes=AppConfig.class)
-
 public class WerknemerServieceImplTest {
 	@Autowired
 	private IWerknemerService werknemer;
 	
-	/*@Test
+	@Test
 	public void findByEmailAndWachtwoordTest(){
-		WerknemerServiceImpl w=new WerknemerServiceImpl();
-		String c= w.findWerknemerByUsernameAndWachtwoord("ilias@gmail.com", "Null").getVoorNaam();
+		//WerknemerServiceImpl w=new WerknemerServiceImpl();
+		String c= werknemer.findWerknemerByUsernameAndWachtwoord("ilias@gmail.com","").getAchterNaam();
 		System.out.println(c);		
-	}*/
+	}
 	
 	//Test Add methode ( package nl.programIt.service.impl.AddWerknemer)	
 	@Test
@@ -40,7 +39,7 @@ public class WerknemerServieceImplTest {
 	}
 	
 	//Test Add methode ( package nl.programIt.service.impl.AddWerknemer)
-	@Test
+	/*@Test
 	public void AddWerknemerTest(){
 		try {
 		DateFormat df=new SimpleDateFormat("yyyy-MM-dd");
@@ -64,6 +63,6 @@ public class WerknemerServieceImplTest {
 			assertFalse(false);
 			
 		}
-	}
+	}*/
 
 }

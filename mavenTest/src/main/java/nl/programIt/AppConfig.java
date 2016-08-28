@@ -10,11 +10,13 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@Configuration
+/*@Configuration
 @ComponentScan(basePackages="nl.programIt")
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages="nl.programIt.repository")
-public class AppConfig {
+									//entityManagerFactoryRef="entityMangerFactoryObject",
+									//transactionManagerRef="trasactionManagerObject" )*/
+ public class AppConfig {
 	@Bean
 	public BasicDataSource datsource(){
 		BasicDataSource basic =new BasicDataSource();

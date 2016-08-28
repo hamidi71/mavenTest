@@ -20,9 +20,9 @@
 		<tbody>
 		<c:forEach items="${listWerknemers}" var="d">
 			<tr>
-				<td>${d.id}</td>
+				<td>${d.idWerknemer}</td>
 				<td>${d.voorNaam}</td>	
-				<td><a href="domain?action=delete&id=${d.id}">delete</a></td>		
+				<td><a href="domain?action=delete&id=${d.idWerknemer}">delete</a></td>		
 			</tr>
 		</c:forEach>
 		</tbody>

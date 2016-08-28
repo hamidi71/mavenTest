@@ -14,7 +14,7 @@ public interface IWerknemerRepository extends JpaRepository<Werknemer, Long>{
 	//methode toevoegen waneer u hem nodig hebt
 	public Werknemer findByEmailAndWachtwoord(String username,String password);
 	//2-query
-	@Query("select s from  Werknemer s where s.email=:u and s.password=:pwd")
+	@Query("select s from  Werknemer s where s.email=:u and s.wachtwoord=:pwd")
 	public Werknemer auth(@Param("u") String username,@Param("pwd") String password);
 	
 	//dao.interfaces methoden
