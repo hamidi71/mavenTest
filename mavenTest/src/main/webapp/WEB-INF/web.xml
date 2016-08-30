@@ -20,6 +20,7 @@
 	 <servlet-name>ServletWebXml</servlet-name>
 	 <servlet-class>nl.programIt.web.MedwerkerServlet</servlet-class>	
 	</servlet>
+	
 	<servlet-mapping>
 		<servlet-name>ServletWebXml</servlet-name>
 		<url-pattern>/medwerkerServlet</url-pattern>
